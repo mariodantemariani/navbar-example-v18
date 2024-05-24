@@ -1,8 +1,15 @@
 <div (click)="rotate(status)" class="navbar-arrows">
   <!-- TODO:usar un icon -->
-  <img
-    [@rotateArrow]="status"
-    src="https://images-na.ssl-images-amazon.com/images/I/513hBIizJUL._SY355_.jpg"
-    width="50px"
-  />
+  <div [@rotateArrow]="status" class="alan-icon">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12,8l8,8l-8,8"
+      />
+    </svg>
+  </div>
 </div>
