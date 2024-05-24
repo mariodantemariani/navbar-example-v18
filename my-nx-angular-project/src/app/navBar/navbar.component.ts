@@ -31,7 +31,7 @@ export class NavbarComponent {
     {
       title: 'Docs',
       //icon: randomIcon,
-      disabled: true,
+      disabled: false,
       hide: false,
       routerLink: '/docs',
     },
