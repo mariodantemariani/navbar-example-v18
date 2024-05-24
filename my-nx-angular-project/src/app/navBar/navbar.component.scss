@@ -1,0 +1,64 @@
+$main-class: 'navbar';
+
+.#{$main-class} {
+  background-color: var(--palette-white-100);
+  box-shadow: -8px 4px 60px 12px rgb(115 127 139 / 8%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  left: 0;
+  margin: var(--spacing-none);
+  position: fixed;
+  top: 0;
+  transition: width 0.25s linear;
+  width: 248px;
+  z-index: 999;
+
+  .arrow-button {
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    margin: var(--spacing-none);
+    padding-left: 20px;
+    width: 100%;
+  }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    margin: var(--spacing-none);
+    margin-bottom: var(--spacing-auto);
+    margin-top: var(--spacing-auto);
+    width: 100%;
+  }
+
+  .logo-wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: var(--spacing-none);
+    margin-top: var(--spacing-64);
+    padding: var(--spacing-none);
+    min-width: 70px;
+
+    &::ng-deep {
+      .logo-type {
+        opacity: 1;
+        transition: opacity 0.25s ease-in-out;
+      }
+    }
+  }
+
+  &.is-contracted {
+    width: 70px;
+
+    .logo-wrapper {
+      &::ng-deep {
+        .logo-type {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

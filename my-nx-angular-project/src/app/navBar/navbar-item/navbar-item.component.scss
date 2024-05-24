@@ -1,0 +1,115 @@
+$icon-wrapper-class: 'icon-wrapper';
+$item-class: 'item';
+$main-class: 'navbar-item';
+$title-class: 'title';
+
+.navbar-item-wrapper {
+  margin: var(--spacing-8) 0;
+  padding: 0 var(--spacing-10);
+
+  .#{$main-class} {
+    border-radius: var(--border-radius-6);
+    display: flex;
+    overflow: hidden;
+    text-decoration: none;
+    transition: background-color 0s ease-in-out;
+
+    .#{$item-class} {
+      color: var(--palette-grey-60);
+      font-family: var(--heading-font-family);
+      font-weight: var(--font-weight-500);
+      width: 100%;
+
+      .#{$item-class}-wrapper {
+        align-items: center;
+        display: flex;
+        margin: 0;
+        min-height: 50px;
+
+        .#{$icon-wrapper-class} {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          min-width: 50px;
+        }
+
+        .#{$title-class} {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: var(--palette-dark-blue-50);
+      color: var(--palette-white-100);
+
+      .#{$item-class} {
+        .#{$icon-wrapper-class} {
+          &::ng-deep {
+            .icon-wrapper {
+              &.mood-text {
+                &--default {
+                  color: var(--palette-white-100);
+                }
+              }
+            }
+          }
+        }
+
+        .#{$title-class} {
+          color: var(--palette-white-100);
+        }
+      }
+    }
+
+    &.active-item {
+      & .#{$item-class} {
+        background-color: var(--palette-dark-blue-50);
+        color: var(--palette-white-100);
+
+        .#{$icon-wrapper-class} {
+          &::ng-deep {
+            .icon-wrapper {
+              &.mood-text {
+                &--default {
+                  color: var(--palette-white-100);
+                }
+              }
+            }
+          }
+        }
+
+        .#{$title-class} {
+          color: var(--palette-white-100);
+        }
+      }
+    }
+
+    &.disabled-item {
+      pointer-events: none;
+
+      & .#{$item-class} {
+        .#{$icon-wrapper-class} {
+          &::ng-deep {
+            .icon-wrapper {
+              &.mood-text {
+                &--default {
+                  color: var(--palette-grey-90);
+                }
+              }
+            }
+          }
+        }
+
+        .#{$title-class} {
+          color: var(--palette-grey-90);
+          text-decoration: none;
+        }
+      }
+    }
+
+    &.hidden-item {
+      display: none;
+    }
+  }
+}

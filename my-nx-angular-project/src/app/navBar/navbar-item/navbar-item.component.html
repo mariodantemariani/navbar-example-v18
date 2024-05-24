@@ -1,0 +1,28 @@
+<div class="navbar-item-wrapper">
+  <a
+    [routerLink]="navigationLink"
+    routerLinkActive="router-link-active"
+    [class]="'navbar-item'"
+    [ngClass]="{
+      'active-item': selectedItem === itemTitle,
+      'disabled-item': disabled,
+      'hidden-item': hide,
+      'is-contracted': status === 'contracted'
+    }"
+  >
+    <span class="item" (click)="selectNavbarItem(itemTitle)">
+      <span class="item-wrapper">
+        <span class="icon-wrapper">
+          <!-- TODO: algo para meterle el icon -->
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/513hBIizJUL._SY355_.jpg"
+            width="40px"
+          />
+        </span>
+        <span class="title">
+          {{ itemTitle }}
+        </span>
+      </span>
+    </span>
+  </a>
+</div>

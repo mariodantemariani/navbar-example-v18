@@ -1,0 +1,36 @@
+$main-class: 'navbar-logo';
+
+.#{$main-class} {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .iso-logo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-width: 70px;
+    padding: 0;
+
+    &::before {
+      align-items: center;
+      //content: url('./../../../assets/svg/iso-logo.svg');
+      display: flex;
+      justify-content: center;
+      height: 34px;
+      width: 34px;
+    }
+  }
+
+  .logo-type {
+    &::before {
+      align-items: center;
+      //content: url('./../../../assets/svg/logo-type.svg');
+      display: flex;
+      justify-content: center;
+      height: 51px;
+      width: 105px;
+    }
+  }
+}

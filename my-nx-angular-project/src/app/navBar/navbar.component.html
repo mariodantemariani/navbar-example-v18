@@ -1,0 +1,31 @@
+<section
+  [class]="'navbar'"
+  [ngClass]="{ 'is-contracted': status === 'contracted' }"
+>
+  <div class="logo-wrapper">
+    <app-navbar-logo [status]="status" />
+  </div>
+  <div class="expandable-area">
+    <app-navbar-arrows
+      class="arrow-button"
+      [status]="status"
+      (emitArrowAction)="updateNavbarStatus($event)"
+    />
+  </div>
+  <div class="item-list">
+    <app-navbar-search />
+  </div>
+  <div class="item-list">
+    <app-navbar-item
+      *ngFor="let item of collectionOfItems; let i = index"
+      [itemIco]="item.icon"
+      [itemTitle]="item.title"
+      [status]="status"
+      [navigationLink]="item.routerLink"
+      [disabled]="item.disabled"
+      [hide]="item.hide"
+      [selectedItem]="itemSelected"
+      (emitSelectedNavbarItem)="updateSelectedItem($event)"
+    />
+  </div>
+</section>

@@ -1,0 +1,25 @@
+.width {
+  &--auto {
+    width: auto;
+  }
+
+  &--size1of1 {
+    width: 100%;
+  }
+
+  &--size1of2 {
+    width: 50%;
+  }
+
+  &--size1of3 {
+    width: 33%;
+  }
+
+  &--size1of4 {
+    width: 25%;
+  }
+
+  &--size1of5 {
+    width: 20%;
+  }
+}
